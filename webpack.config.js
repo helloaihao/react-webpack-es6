@@ -14,8 +14,13 @@ module.exports = {
 	module: {
 		loaders: [{
 			test: /\.js$/,
-			loaders: ['babel'],
-			include: path.join(__dirname, 'src')
+			loaders: ['babel']
+		}, {
+			test: /\.css$/,
+			loader: 'style!css'
+		}, {
+			test: /\.less$/,
+			loader: 'style!css!less'
 		}]
 	},
 	resolve: {
@@ -23,6 +28,12 @@ module.exports = {
 	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
+		//new webpack.optimize.UglifyJsPlugin({
+		//	compressor: {
+		//		warnings: false
+		//	}
+		//}),
 		new webpack.NoErrorsPlugin()
+
 	]
 };
