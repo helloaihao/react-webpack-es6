@@ -1,3 +1,5 @@
+process.env.NODE_ENV = 'test';
+
 import React from 'react';
 import { findDOMNode } from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
