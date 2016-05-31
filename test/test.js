@@ -4,7 +4,7 @@ import React from 'react';
 import { findDOMNode } from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import { expect } from 'chai';
-import { App } from '../src/App';
+import { App } from '../src/app';
 
 describe('test <App />', () => {
     describe('test <Counter />',() => {
