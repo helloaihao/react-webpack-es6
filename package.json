@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "NODE_ENV=test && mocha --compilers js:babel-core/register --recursive  --require ./test/setup.js",
+    "test": "export NODE_ENV=test && mocha --compilers js:babel-core/register --recursive  --require ./test/setup.js",
     "test-win": "SET BABEL_ENV=test && mocha --compilers js:babel-core/register --recursive  --require ./test/setup.js"
   },
   "keywords": [
