@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "mocha --compilers js:babel-core/register --recursive"
+    "test": "SET BABEL_ENV=test & mocha --compilers js:babel-core/register --recursive  --require ./test/setup.js"
   },
   "keywords": [
     "react",
@@ -32,6 +32,7 @@
     "chai": "^3.5.0",
     "css-loader": "^0.23.1",
     "express": "^4.13.4",
+    "jsdom": "^9.2.1",
     "less-loader": "^2.2.3",
     "mocha": "^2.5.3",
     "react-addons-test-utils": "^15.0.1",
