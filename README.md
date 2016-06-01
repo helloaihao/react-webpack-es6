@@ -10,8 +10,14 @@
 
 ### 热替换
 
-最开始看网上的资料都是 `react-hot-loader` ， 跟着资料搭怎么也搭不对，直到无意中发现了 [https://twitter.com/dan_abramov/status/645595855475613697](https://twitter.com/dan_abramov/status/645595855475613697) **This Project Is Deprecated** Σ( ° △ °|||)︴
-作者已经不维护这个项目， 直接换到了 `react-transform-boilerplate` 。。。。 然后跟着这个弄终于成功。 结果最近去看，发现 README 上又写着几个大字 **This Project Is Deprecated** ヾ(｡｀Д´｡)
+最开始看网上的资料都是 `react-hot-loader` ， 跟着资料搭怎么也搭不对，直到无意中发现了 [https://twitter.com/dan_abramov/status/645595855475613697](https://twitter.com/dan_abramov/status/645595855475613697)
+ 
+ **This Project Is Deprecated** Σ( ° △ °|||)︴
+
+作者已经不维护这个项目， 直接换到了 `react-transform-boilerplate` 。。。。 然后跟着这个弄终于成功。 结果最近去看，发现 README 上又写着几个大字
+
+**This Project Is Deprecated** ヾ(｡｀Д´｡)
+
 我选择死亡。。。。
 
 ### 测试
