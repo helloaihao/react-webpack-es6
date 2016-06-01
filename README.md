@@ -14,7 +14,9 @@
  
  **This Project Is Deprecated** Σ( ° △ °|||)︴
 
-作者已经不维护这个项目， 直接换到了 `react-transform-boilerplate` 。。。。 然后跟着这个弄终于成功。 结果最近去看，发现 README 上又写着几个大字
+作者已经不维护这个项目， 直接换到了 `react-transform-boilerplate` 。。。。 然后跟着这个弄终于成功。。。
+
+2016.6.1更新： 最近去看，发现 README 上又写着几个大字
 
 **This Project Is Deprecated** ヾ(｡｀Д´｡)
 
