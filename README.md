@@ -1,9 +1,9 @@
-# react-webpack-es6 [![build status][travis-image]][travis-url] [![Test coverage][coveralls-image]][coveralls-url]
+# react-webpack-es6 [![build status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url]
 
 [travis-image]: https://travis-ci.org/helloaihao/react-webpack-es6.svg?style=flat-square
 [travis-url]: https://travis-ci.org/helloaihao/react-webpack-es6
-[coveralls-image]: https://img.shields.io/coveralls/helloaihao/react-webpack-es6?style=flat-square
-[coveralls-url]: https://coveralls.io/r/helloaihao/react-webpack-es6?branch=master
+[coveralls-image]: https://coveralls.io/repos/github/helloaihao/react-webpack-es6/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/helloaihao/react-webpack-es6?branch=master
 
 ### 自己搭环境碰到的各种坑
 
