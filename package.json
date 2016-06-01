@@ -4,9 +4,10 @@
   "description": "learn react tutorial",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "export NODE_ENV=test && mocha --compilers js:babel-core/register --recursive  --require ./test/setup.js",
-    "test-win": "SET BABEL_ENV=test && mocha --compilers js:babel-core/register --recursive  --require ./test/setup.js"
+    "start": "export NODE_ENV=dev && node server.js",
+    "start:win": "SET BABEL_ENV=dev && node server.js",
+    "test": "mocha --compilers js:babel-core/register --recursive  --require ./test/setup.js",
+    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha -- --compilers js:babel-core/register --recursive --require ./test/setup.js"
   },
   "keywords": [
     "react",
@@ -33,6 +34,7 @@
     "chai": "^3.5.0",
     "css-loader": "^0.23.1",
     "express": "^4.13.4",
+    "istanbul": "^1.0.0-alpha.2",
     "jsdom": "^9.2.1",
     "less-loader": "^2.2.3",
     "mocha": "^2.5.3",
