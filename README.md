@@ -5,6 +5,16 @@
 [coveralls-image]: https://coveralls.io/repos/github/helloaihao/react-webpack-es6/badge.svg?branch=master
 [coveralls-url]: https://coveralls.io/github/helloaihao/react-webpack-es6?branch=master
 
+### 安装
+
+```
+git clone https://github.com/helloaihao/react-webpack-es6.git
+cd react-webpack-es6
+npm install
+npm start
+open http://localhost:3000
+```
+
 ### 自己搭环境碰到的各种坑
 
 
