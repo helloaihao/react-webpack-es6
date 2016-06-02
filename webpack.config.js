@@ -1,5 +1,7 @@
 var path = require('path');
+var autoprefixer = require('autoprefixer');
 var webpack = require('webpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
 	devtool: 'source-map',
@@ -17,18 +19,23 @@ module.exports = {
 			test: /\.js$/,
 			loaders: ['babel']
 		}, {
-			test: /\.css$/,
-			loader: 'style!css'
-		}, {
 			test: /\.less$/,
-			loader: 'style!css!less'
+			loader: 'style!css!postcss!less'
+		}, {
+			test: /\.css/,
+			loader: ExtractTextPlugin.extract('style', 'css', 'postcss')
+		}, {
+			test: /\.(png|jpg)$/,
+			loader: 'url?limit=25000'
 		}]
 	},
+	postcss: [autoprefixer],
 	resolve: {
 		extensions: ['', '.js']
 	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
+		new ExtractTextPlugin("style.less"),
 		//new webpack.optimize.UglifyJsPlugin({
 		//	compressor: {
 		//		warnings: false
