@@ -1,23 +1,33 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { NICE, SUPER_NICE } from './colors';
 
 
-class Counter extends Component {
+class Counter extends React.Component {
+    static propTypes = {
+        increment: React.PropTypes.number,
+        color: React.PropTypes.oneOf(['pink', 'black'])
+    };
+
+    static defaultProps = {
+        color: 'black'
+    };
+
     constructor(props) {
         super(props);
         this.state = {counter: 0};
-
+        this.handleTick = this.handleTick.bind(this);
     }
 
     componentWillMount() {
-        this.interval = setInterval(() => this.tick(), 1000);
+        this.handleTick();
+        this.interval = setInterval(this.handleTick, 1000);
     }
 
     componentWillUnmount() {
-        clear(this.interval);
+        clearInterval(this.interval);
     }
 
-    tick() {
+    handleTick() {
         this.setState({
             counter: this.state.counter + this.props.increment
         });
@@ -32,7 +42,7 @@ class Counter extends Component {
     }
 }
 
-export class App extends Component {
+export class App extends React.Component {
     render() {
         return (
             <div>

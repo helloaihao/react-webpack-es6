@@ -65,7 +65,7 @@ $ SET BABEL_ENV=production
 $ YOUR_COMMAND_HERE
 ```
 
-我是在win下开发，照上面设置后成功。
+我是在 win 下开发，照上面设置后成功。
 不过还没完， 在提交到 `Travis CI` 后发现 Unix 的设置不对， 又是一番折腾， 最后改为：
 
 ```
@@ -75,7 +75,7 @@ export NODE_ENV=dev
 
 ### 代码覆盖率
 
-使用 `istanbul` 来测试， 和mocha一样， es5 下没问题， 到了 es6 下出现：
+使用 `istanbul` 来测试， 和 `mocha` 一样， es5 下没问题， 到了 es6 下出现：
 
 ```
 No coverage information was collected, exit without writing coverage information
@@ -83,5 +83,50 @@ No coverage information was collected, exit without writing coverage information
 
 又是一番折腾，找到了[http://stackoverflow.com/questions/34538964/es6-react-istanbul-no-coverage-information-was-collected-exit-without-writing-c](http://stackoverflow.com/questions/34538964/es6-react-istanbul-no-coverage-information-was-collected-exit-without-writing-c)
 和 [https://github.com/gotwarlost/istanbul/issues/496](https://github.com/gotwarlost/istanbul/issues/496), 最后选择升级 `istanbul@1.0.0-alpha.2` 解决。。。
- 
+
+### `defaultProps` 和 `propTypes`
+
+根据资料设置这两个东西：
+
+
+```
+    static propTypes = {
+        increment: React.PropTypes.number,
+        color: React.PropTypes.oneOf(['pink', 'black'])
+    };
+
+    static defaultProps = {
+        color: 'black'
+    };
+```
+
+运行时报错： ` Unexpected token ` , 一番折腾发现是babel转换问题，解决办法：在 `.babelrc` 中加入 `"optional": ["es7.classProperties"]`
+
+想着应该搞定了，结果继续报错：
+
+```
+Module build failed: ReferenceError: [BABEL] react-webpack-es6\node_modules\webpack-hot-middleware\client.js: Using removed Babel 5 option: react-webpack-es6\.babelrc.optional - Put the specific transforms you want in the `plugins` option
+```
+
+
+原来又是过时的东西。。。 o(︶︿︶)o
+
+又是一番折腾，找到了[https://babeljs.io/docs/plugins/transform-class-properties/](https://babeljs.io/docs/plugins/transform-class-properties/) ： 
+
+```
+Installation
+
+$ npm install babel-plugin-transform-class-properties
+
+Usage
+
+Add the following line to your .babelrc file:
+
+{
+  "plugins": ["transform-class-properties"]
+}
+```
+
+终于搞定~  o(\*￣︶￣\*)o
+
 ### 未完待续。。。。

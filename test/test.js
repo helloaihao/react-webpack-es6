@@ -1,5 +1,5 @@
 import React from 'react';
-import { findDOMNode } from 'react-dom';
+import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import { expect } from 'chai';
 import { App } from '../src/app';
@@ -9,7 +9,7 @@ describe('test <App />', () => {
         let app;
         let counters;
 
-        beforeEach(() => {
+        before(() => {
             app = TestUtils.renderIntoDocument(<App/>);
             counters = TestUtils.scryRenderedDOMComponentsWithTag(app, 'h1');
         });
@@ -21,6 +21,12 @@ describe('test <App />', () => {
         it('计数器类是否为「aihao」', () => {
             expect(counters[0].className).to.be.equal('aihao');
         });
+
+        after(() => {
+            let appNode = ReactDOM.findDOMNode(app);
+            ReactDOM.unmountComponentAtNode(appNode.parentNode);
+        });
+
 
     });
 });
